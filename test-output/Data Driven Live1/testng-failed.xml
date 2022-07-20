@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Data Driven Live1]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Add customer(failed)">
+    <classes>
+      <class name="com.mj.testcases.AddCustTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="addCust"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.mj.testcases.AddCustTest -->
+    </classes>
+  </test> <!-- Add customer(failed) -->
+</suite> <!-- Failed suite [Data Driven Live1] -->

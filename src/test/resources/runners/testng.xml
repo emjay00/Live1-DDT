@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Data Driven Live1">
+    <test verbose="2" preserve-order="true" name="Bank manager login">
+        <classes>
+            <class name="com.mj.testcases.BmLoginTest">
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="Add customer">
+        <classes>
+            <class name="com.mj.testcases.AddCustTest">
+            </class>
+        </classes>
+    </test>
+
+</suite>
