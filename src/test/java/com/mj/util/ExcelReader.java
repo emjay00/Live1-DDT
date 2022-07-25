@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
-
 import org.apache.poi.common.usermodel.HyperlinkType;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.util.HSSFColor;
@@ -23,6 +22,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
+@SuppressWarnings("ALL")
 public class ExcelReader {
 
     public String path;
@@ -55,10 +55,7 @@ public class ExcelReader {
             int number = sheet.getLastRowNum() + 1;
             return number;
         }
-
     }
-
-
     // returns the data from a cell
     public String getCellData(String sheetName, String colName, int rowNum) {
         try {
@@ -108,8 +105,6 @@ public class ExcelReader {
 
 
                 }
-
-
                 return cellText;
             } else if (cell.getCellType() == CellType.BLANK)
                 return "";
@@ -117,24 +112,18 @@ public class ExcelReader {
                 return String.valueOf(cell.getBooleanCellValue());
 
         } catch (Exception e) {
-
             e.printStackTrace();
             return "row " + rowNum + " or column " + colName + " does not exist in xls";
         }
     }
-
-
     // returns the data from a cell
     public String getCellData(String sheetName, int colNum, int rowNum) {
         try {
             if (rowNum <= 0)
                 return "";
-
             int index = workbook.getSheetIndex(sheetName);
-
             if (index == -1)
                 return "";
-
 
             sheet = workbook.getSheetAt(index);
             row = sheet.getRow(rowNum - 1);
@@ -176,8 +165,6 @@ public class ExcelReader {
             return "row " + rowNum + " or column " + colNum + " does not exist  in xls";
         }
     }
-
-
     // returns true if data is set successfully else false
     public boolean setCellData(String sheetName, String colName, int rowNum, String data) {
         try {
@@ -361,22 +348,15 @@ public class ExcelReader {
 
             cell.setCellValue(colName);
             cell.setCellStyle(style);
-
             fileOut = new FileOutputStream(path);
             workbook.write(fileOut);
             fileOut.close();
-
         } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
-
         return true;
-
-
     }
-
-
     // removes a column and all the contents
     public boolean removeColumn(String sheetName, int colNum) {
         try {
